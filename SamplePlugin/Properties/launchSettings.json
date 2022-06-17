@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SamplePlugin": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Fatigue Eldritch\\AppData\\Local\\XIVLauncher\\XIVLauncher.exe"
+    }
+  }
+}

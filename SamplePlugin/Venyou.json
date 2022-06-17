@@ -1,0 +1,13 @@
+{
+  "Author": "Fatigue",
+  "Name": "Venyou",
+  "Punchline": "Venue listings for the discerning roleplayer",
+  "Description": "Manage and view listings of open/closed venues",
+  "InternalName": "venyou",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "roleplay",
+    "venues",
+    "plugin"
+  ]
+}
