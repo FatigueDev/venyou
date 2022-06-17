@@ -89,10 +89,13 @@ namespace SamplePlugin
                                     {
                                         ImGui.PushStyleColor(ImGuiCol.Header, new Vector4(0.1f, 0.8f, 0.1f, 0.8f));
                                     }
+
                                     if (ImGui.CollapsingHeader((venue.status == false ? "[CLOSED] - " : "[OPEN] - ") + venue.name))
                                     {
                                         ImGui.PopStyleColor(1);
                                         ImGui.InputTextMultiline("Description", ref venue.description, 255, new Vector2(380, 100), ImGuiInputTextFlags.ReadOnly);
+                                        ImGui.InputText("Opening Times", ref venue.opening_times, 255, ImGuiInputTextFlags.ReadOnly);
+                                        ImGui.InputText("Location", ref venue.location, 255, ImGuiInputTextFlags.ReadOnly);
                                     }
                                 });
                             }
@@ -101,16 +104,11 @@ namespace SamplePlugin
                         }
                         if(ImGui.BeginTabItem("Create Venue"))
                         {
-                            ImGui.Text($"Your UserID is ${this.configuration.UserId.ToString()}");
-
                             ImGui.InputText("Name", ref CreateVenueModel.name, 255);
                             ImGui.InputTextMultiline("Description", ref CreateVenueModel.description, 255, new Vector2(387, 100), ImGuiInputTextFlags.NoHorizontalScroll | ImGuiInputTextFlags.CtrlEnterForNewLine);
                             ImGui.InputText("Opening Times", ref CreateVenueModel.opening_times, 255);
                             ImGui.InputText("Location", ref CreateVenueModel.location, 255);
-                            if(ImGui.Checkbox("Open", ref CreateVenueModel.status))
-                            {
-
-                            }
+                            ImGui.Checkbox("Open", ref CreateVenueModel.status);
 
                             if (ImGui.Button("Save Changes"))
                             {
